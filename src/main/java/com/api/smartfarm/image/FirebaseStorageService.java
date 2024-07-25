@@ -1,6 +1,7 @@
 package com.api.smartfarm.image;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,7 @@ public class FirebaseStorageService {
         metadata.setFirebaseUrl(blob.getMediaLink());
         metadata.setContentType(file.getContentType());
         metadata.setSize(file.getSize());
-        metadata.setUploadDate(LocalDateTime.now());
+        metadata.setUploadDate(LocalDate.now());
 
         imageMetadataRepository.save(metadata);
 

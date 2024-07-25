@@ -28,7 +28,8 @@ public class SensorDataService {
     
     // 테스트용 (매시간) : 0 0 * * * ?
     // 서비스용 (매일자정) : 0 0 0 * * ?
-    @Scheduled(cron = "0 30 17 * * *")
+    //"0 30 17 * * *"
+    @Scheduled(cron = "0 0 0 * * ?")
     public void createDailySummary() {
 //    	LocalDateTime yesterday = LocalDateTime.now().minusMinutes(5);
         LocalDateTime yesterday = LocalDate.now().minusDays(1).atStartOfDay();

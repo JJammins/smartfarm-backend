@@ -1,6 +1,6 @@
 package com.api.smartfarm.image;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,7 +20,10 @@ public class ImageMetadata {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+//    @Column
+//    private Long number;
+    
     @Column(nullable = false)
     private String fileName;
 
@@ -34,7 +37,7 @@ public class ImageMetadata {
     private Long size;
 
     @Column(nullable = false)
-    private LocalDateTime uploadDate;
+    private LocalDate uploadDate;
 
     // Getters and setters
 }

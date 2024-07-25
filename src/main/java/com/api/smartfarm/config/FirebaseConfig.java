@@ -23,7 +23,7 @@ public class FirebaseConfig {
                     .setStorageBucket("smartfarm-image-f87b3.appspot.com")
                     .build();
 
-            FirebaseApp.initializeApp(options);
+             FirebaseApp.initializeApp(options);
         } catch (IOException e) {
             e.printStackTrace();
         }
