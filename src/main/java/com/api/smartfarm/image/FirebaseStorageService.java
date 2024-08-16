@@ -19,6 +19,9 @@ public class FirebaseStorageService {
 
     @Autowired
     private ImageMetadataRepository imageMetadataRepository;
+    
+    @Autowired
+    private TomatoSummaryService tomatoSummaryService;
 
     public String uploadImage(MultipartFile file) throws IOException {
         String fileName = file.getOriginalFilename();
@@ -40,6 +43,8 @@ public class FirebaseStorageService {
         metadata.setUploadDate(LocalDate.now());
 
         imageMetadataRepository.save(metadata);
+        
+        tomatoSummaryService.updateTomatoSummary(fileName, LocalDate.now());
 
         return blob.getMediaLink();
     }

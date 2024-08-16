@@ -1,10 +1,12 @@
 package com.api.smartfarm.condition;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,6 +49,9 @@ public class SensorDataController {
     @Autowired
     private SensorDataService sensorDataService;
     
+    @Autowired
+    private DailySummaryRepository dailySummaryRepository;
+    
     @PostMapping("/saveData")
     public ResponseEntity<String> saveData(@RequestBody Map<String, Double> data) {
     	Double temperature = data.get("temperature");
@@ -59,18 +64,32 @@ public class SensorDataController {
         sensorDataService.saveData(temperature, humidity);
         return ResponseEntity.ok("Data saved successfully");
     }
-    
+
     @GetMapping("/dailySummary")
-    public ResponseEntity<?> getDailySummary(@RequestParam(required = false) String uid) throws Exception {
+    public ResponseEntity<List<DailySummary>> getDailySummary(
+    		@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date, 
+    		@RequestParam(required = false) String uid) throws Exception {
     	System.out.println(uid);
     	System.out.println(getUids().contains(uid));
     	
-    	if(uid == null || getUids().contains(uid) == false) {
-    		return ResponseEntity.ok(null);
+    	if(uid == null || !getUids().contains(uid)) {
+    		return ResponseEntity.badRequest().build();
     	}
-        List<DailySummary> summaries = sensorDataService.getDailySummary();
+        List<DailySummary> summaries = dailySummaryRepository.findByDate(date);
         return ResponseEntity.ok(summaries);
     }
+    
+//    @GetMapping("/dailySummary")
+//    public ResponseEntity<?> getDailySummary(@RequestParam(required = false) String uid) throws Exception {
+//    	System.out.println(uid);
+//    	System.out.println(getUids().contains(uid));
+//    	
+//    	if(uid == null || getUids().contains(uid) == false) {
+//    		return ResponseEntity.ok(null);
+//    	}
+//        List<DailySummary> summaries = sensorDataService.getDailySummary();
+//        return ResponseEntity.ok(summaries);
+//    }
     
     @GetMapping("/yesterdaySummary")
     public ResponseEntity<?> getYesterdaySummary(@RequestParam(required = false) String uid) throws Exception{
