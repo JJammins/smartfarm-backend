@@ -38,7 +38,7 @@
 ![image](https://github.com/user-attachments/assets/6db7466c-1fe9-4394-8f95-30af287e4e59)
 
 ### 이미지 DB (파이어베이스 Storage Url)
-![image](https://github.com/user-attachments/assets/c16e8f5e-eef2-4c67-a6de-ffd1e644f16e
+![image](https://github.com/user-attachments/assets/c16e8f5e-eef2-4c67-a6de-ffd1e644f16e)
 
 ### 토마토 개수 요약 DB (차트용)
 ![image](https://github.com/user-attachments/assets/d49cd598-78ec-4152-9db9-e9db565115e2)
