@@ -28,6 +28,22 @@
 * 파이어베이스 스토리지를 활용한 이미지 DB저장 및 조회
 * 파이어베이스 UID 검증을 통해 인증된 사용자에게만 데이터 제공
 
+### 회원정보 DB
+![image](https://github.com/user-attachments/assets/6ef2b20a-ea46-48ea-bbea-52610d4764fd)
+
+### 일일 온습도 DB
+![image](https://github.com/user-attachments/assets/5d3af7a5-680c-4c23-bcf9-1f1801f1288a)
+
+### 일일 온습도 요약 DB
+![image](https://github.com/user-attachments/assets/6db7466c-1fe9-4394-8f95-30af287e4e59)
+
+### 이미지 DB (파이어베이스 Storage Url)
+![image](https://github.com/user-attachments/assets/c16e8f5e-eef2-4c67-a6de-ffd1e644f16e
+
+### 토마토 개수 요약 DB (차트용)
+![image](https://github.com/user-attachments/assets/d49cd598-78ec-4152-9db9-e9db565115e2)
+
+
 ## 프론트엔드
 * 리액트를 사용한 웹 앱
 * ROS 통신 구현 (실시간 영상, 수동조종, 자율주행 시작 등)
@@ -36,6 +52,25 @@
 * Ripe, Unripe, Half-Ripe의 데이터를 조회할 수 있는 차트 구현
 * 이미지 조회 구현
 * 웹 CSS 등
+
+### 로그인 및 회원가입 페이지
+![image](https://github.com/user-attachments/assets/218f480a-a0df-477b-963f-9347e90f28a8)
+
+
+![image](https://github.com/user-attachments/assets/66c642a3-1708-4870-a277-95b71d80ba25)
+
+### 메인페이지 & 차트
+![image](https://github.com/user-attachments/assets/b61758f0-f8af-4842-a6ed-83d502c3cb4c)
+
+
+![image](https://github.com/user-attachments/assets/00357e14-00ab-4b08-bb77-2f72974fdd08)
+
+### 검출된 객체 확인 페이지
+![image](https://github.com/user-attachments/assets/d8116c10-fb57-40c7-a66d-9b0c13b9fdb1)
+
+### CS페이지
+![image](https://github.com/user-attachments/assets/99ebc1ad-a227-42dc-a63f-b33794821fe8)
+
 
 ## 그 외
 * 학습모델을 적용한 객체탐지 코드 구현
